@@ -19,8 +19,8 @@ function generatePassword() {
 
   var uppercase = confirm("Would you like to use uppercase letters?");
   var lowercase = confirm("Would you like to use lowercase letters?");
-  var numbers = confirm("Would you like to use numbers?")
-  var symbols = confirm("Would you like to use symbols?")
+  var numbers = confirm("Would you like to use numbers?");
+  var symbols = confirm("Would you like to use symbols?");
 
   while (!uppercase && !lowercase && !numbers && !symbols) {
     alert("You must select at least one character type!");
@@ -29,15 +29,17 @@ function generatePassword() {
     numbers = confirm("Would you like to use numbers?");
     symbols = confirm("Would you like to use symbols?");
   }
-
+ 
   // Allowed list of characters
+
   var allowedList = "";
   if (uppercase) allowedList += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   if (lowercase) allowedList += "abcdefghijklmnopqrstuvwxyz";
   if (numbers) allowedList += "0123456789";
-  if (symbols) allowedList += "!@#$%^&*(){}[]=<>/,."
+  if (symbols) allowedList += "!@#$%^&*(){}[]=<>/,.";
   
   // For function to run through allowedList
+
   for (var i = password.length; i < length; i++) {
     var randomNumber = Math.floor(Math.random() * allowedList.length);
     password += allowedList.charAt(randomNumber);
@@ -48,4 +50,5 @@ function generatePassword() {
 }
 
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
