@@ -12,9 +12,9 @@ function writePassword() {
 
 // User prompts when creating a password
 
-function createPassword() {
+function generatePassword() {
   var password = "";
-  var length = Number(prompt("How many characters would you like you password to be?"));
+  var length = Number(prompt("How many characters would you like your password to be?"));
   while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("Password must be between 8 through 128 characters in length. How many characters would you like?"));
 
   var uppercase = confirm("Would you like to use uppercase letters?");
@@ -30,11 +30,22 @@ function createPassword() {
     symbols = confirm("Would you like to use symbols?");
   }
 
+  // Allowed list of characters
+  var allowedList = "";
+  if (uppercase) allowedList += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  if (lowercase) allowedList += "abcdefghijklmnopqrstuvwxyz";
+  if (numbers) allowedList += "0123456789";
+  if (symbols) allowedList += "!@#$%^&*(){}[]=<>/,."
+  
+  // For function to run through allowedList
+  for (var i = password.length; i < length; i++) {
+    var randomNumber = Math.floor(Math.random() * allowedList.length);
+    password += allowedList.charAt(randomNumber);
+  }
+
+  return password;
+
 }
-
-
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
