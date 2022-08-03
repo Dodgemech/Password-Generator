@@ -1,6 +1,6 @@
 # Password Generator
 
-This application was designed with HTML 5, CSS 3 and JavaScript for module 3. User story and acceptance criteria are as follows...
+This application was designed with HTML 5, CSS 3 and JavaScript to help generate a password of 8 to 128 characters with a choice of upper case, lower case, numbers and special characters. User story and acceptance criteria are as follows...
 
 ## User Story
 
@@ -35,3 +35,4 @@ THEN the password is either displayed in an alert or written to the page
 ![An app window with the label Password Generator, an input field labeled Your Secure Password, and a Generate Password button.](./Assets/Images/03-javascript-homework-demo.png)
 
 ## GitHub Pages
+https://dodgemech.github.io/Password-Generator/
